@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AtualizarCli extends StatelessWidget {
-  AtualizarCli({super.key});
-
   TextEditingController idController = TextEditingController();
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -47,7 +45,7 @@ class AtualizarCli extends StatelessWidget {
                         controller: idController,
                         textAlign: TextAlign.center,
                         validator: ((value) =>
-                            value!.isEmpty ? "Informe o ID" : null),
+                            value.isEmpty ? "Informe o ID" : null),
                         decoration: const InputDecoration(
                           labelText: 'Informe o ID',
                           labelStyle: TextStyle(fontSize: 18),
@@ -61,7 +59,7 @@ class AtualizarCli extends StatelessWidget {
                         controller: nameController,
                         textAlign: TextAlign.center,
                         validator: ((value) =>
-                            value!.isEmpty ? "Informe o nome" : null),
+                            value.isEmpty ? "Informe o nome" : null),
                         decoration: const InputDecoration(
                           labelText: 'Informe o nome',
                           labelStyle: TextStyle(fontSize: 18),
@@ -75,7 +73,7 @@ class AtualizarCli extends StatelessWidget {
                         controller: emailController,
                         textAlign: TextAlign.center,
                         validator: ((value) =>
-                            value!.isEmpty ? "Informe o e-mail" : null),
+                            value.isEmpty ? "Informe o e-mail" : null),
                         decoration: const InputDecoration(
                           labelText: 'Informe o e-mail',
                           labelStyle: TextStyle(fontSize: 18),
@@ -89,7 +87,7 @@ class AtualizarCli extends StatelessWidget {
                         controller: rgController,
                         textAlign: TextAlign.center,
                         validator: ((value) =>
-                            value!.isEmpty ? "Informe o RG" : null),
+                            value.isEmpty ? "Informe o RG" : null),
                         decoration: const InputDecoration(
                             labelText: 'Informe o RG',
                             labelStyle: TextStyle(fontSize: 18)),
@@ -102,7 +100,7 @@ class AtualizarCli extends StatelessWidget {
                         controller: cpfController,
                         textAlign: TextAlign.center,
                         validator: ((value) =>
-                            value!.isEmpty ? "Informe o CPF" : null),
+                            value.isEmpty ? "Informe o CPF" : null),
                         decoration: const InputDecoration(
                             labelText: 'Informe o CPF',
                             labelStyle: TextStyle(fontSize: 18)),
@@ -115,7 +113,7 @@ class AtualizarCli extends StatelessWidget {
                         controller: cepController,
                         textAlign: TextAlign.center,
                         validator: ((value) =>
-                            value!.isEmpty ? "Informe o CEP" : null),
+                            value.isEmpty ? "Informe o CEP" : null),
                         decoration: const InputDecoration(
                             labelText: 'Informe o CEP',
                             labelStyle: TextStyle(fontSize: 18)),

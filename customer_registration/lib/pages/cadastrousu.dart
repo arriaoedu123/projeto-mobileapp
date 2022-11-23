@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../main.dart';
 
 class CadastroUsu extends StatelessWidget {
-  CadastroUsu({super.key});
-
   TextEditingController emailController = TextEditingController();
   TextEditingController userController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -45,7 +43,7 @@ class CadastroUsu extends StatelessWidget {
                         controller: emailController,
                         textAlign: TextAlign.center,
                         validator: ((value) =>
-                            value!.isEmpty ? "Informe o e-mail" : null),
+                            value.isEmpty ? "Informe o e-mail" : null),
                         decoration: const InputDecoration(
                           labelText: 'Informe o e-mail',
                           labelStyle: TextStyle(fontSize: 18),
@@ -59,7 +57,7 @@ class CadastroUsu extends StatelessWidget {
                         controller: userController,
                         textAlign: TextAlign.center,
                         validator: ((value) =>
-                            value!.isEmpty ? "Informe o usuário" : null),
+                            value.isEmpty ? "Informe o usuário" : null),
                         decoration: const InputDecoration(
                           labelText: 'Informe o usuário',
                           labelStyle: TextStyle(fontSize: 18),
@@ -74,7 +72,7 @@ class CadastroUsu extends StatelessWidget {
                         controller: passwordController,
                         textAlign: TextAlign.center,
                         validator: ((value) =>
-                            value!.isEmpty ? "Informe a senha" : null),
+                            value.isEmpty ? "Informe a senha" : null),
                         decoration: const InputDecoration(
                             labelText: 'Informe a senha',
                             labelStyle: TextStyle(fontSize: 18)),

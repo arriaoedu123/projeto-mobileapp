@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ListarCli extends StatelessWidget {
-  ListarCli({super.key});
-
   TextEditingController idController = TextEditingController();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -42,7 +40,7 @@ class ListarCli extends StatelessWidget {
                         controller: idController,
                         textAlign: TextAlign.center,
                         validator: ((value) =>
-                            value!.isEmpty ? "Informe o ID" : null),
+                            value.isEmpty ? "Informe o ID" : null),
                         decoration: const InputDecoration(
                           labelText: 'Informe o ID',
                           labelStyle: TextStyle(fontSize: 18),

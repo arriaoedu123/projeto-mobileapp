@@ -6,8 +6,6 @@ import './atualizarcli.dart';
 import './deletarcli.dart';
 
 class TelaPrincipal extends StatelessWidget {
-  TelaPrincipal({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

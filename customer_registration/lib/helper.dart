@@ -38,9 +38,9 @@ class DatabaseHelper {
   // referência única para o banco de dados
   // nesse ponto, verificamos se o banco existe físicamente
   // a ? diz que a variável aceita valores nulos
-  static Database? _database;
+  static Database _database;
 
-  Future<Database?> get database async {
+  Future<Database> get database async {
     // se o banco de dados não existir, ele será criado
     if (_database != null) return _database;
     // se o banco de dados existir, ele será retornado
@@ -60,7 +60,8 @@ class DatabaseHelper {
 
   // método que cria um novo banco de dados e tabelas, caso não exista
   Future _onCreate(Database db, int version) async {
-    await db.execute('''
+    await db.execute(
+        '''
         CREATE TABLE $tableUsu (
           $columnUsuId INTEGER PRIMARY KEY,
           $columnUsuEmail TEXT NOT NULL,
@@ -83,36 +84,36 @@ class DatabaseHelper {
   // método de inclusão de dados
   // insere uma linha na tabela existente no banco de dados, onde cada chave Map() é um nome de coluna e o valor é o conteúdo da variável
   Future<int> insertUsu(Map<String, dynamic> row) async {
-    Database? db = await instance.database;
-    return await db!.insert(tableUsu, row);
+    Database db = await instance.database;
+    return await db.insert(tableUsu, row);
   }
 
   Future<int> insertCli(Map<String, dynamic> row) async {
-    Database? db = await instance.database;
-    return await db!.insert(tableCli, row);
+    Database db = await instance.database;
+    return await db.insert(tableCli, row);
   }
 
   // método que retorna todas as linhas existentes no banco de dados (tabela)
   Future<List<Map<String, dynamic>>> queryCliId() async {
-    Database? db = await instance.database;
-    return await db!.query(tableCli);
+    Database db = await instance.database;
+    return await db.query(tableCli);
   }
 
   // método para atualizar um registro
   Future<int> updateCli(Map<String, dynamic> row) async {
-    Database? db = await instance.database;
+    Database db = await instance.database;
 
     int id = row[columnCliId];
 
-    return await db!
+    return await db
         .update(tableCli, row, where: '$columnCliId = ?', whereArgs: [id]);
   }
 
   // método para excluir um registro
   Future<int> deleteCli(int id) async {
-    Database? db = await instance.database;
+    Database db = await instance.database;
 
-    return await db!
+    return await db
         .delete(tableCli, where: '$columnCliId = ?', whereArgs: [id]);
   }
 }
