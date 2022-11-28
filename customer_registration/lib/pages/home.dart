@@ -1,130 +1,109 @@
 import 'package:flutter/material.dart';
-import './cadastrousu.dart';
 import './cadastrocli.dart';
 import './listarcli.dart';
-import './atualizarcli.dart';
+import 'atualizarcli.dart';
 import './deletarcli.dart';
+import 'package:customer_registration/Comm/genLoginSignupHeader.dart';
+import 'package:customer_registration/Comm/genTextFormField.dart';
 
 class TelaPrincipal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Tela Principal",
-          style: TextStyle(color: Colors.white),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.blue,
+        title: Text('Tela principal'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Column(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Container(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  'Escolha uma opção',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
-                ),
+                genLoginSignupHeader('Escolha uma opção'),
                 Container(
-                  margin: const EdgeInsets.only(top: 20, bottom: 20),
+                  margin: EdgeInsets.all(20.0),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
                   child: TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                    child: Text(
+                      'Cadastrar cliente',
+                      style: TextStyle(color: Colors.white),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => CadastroUsu()),
-                      );
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (_) => CadastroCli()),
+                          (Route<dynamic> route) => false);
                     },
-                    child: const Text(
-                      "Cadastrar usuário",
-                      style: TextStyle(fontSize: 30, color: Colors.white),
-                    ),
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(bottom: 20),
+                  margin: EdgeInsets.all(20.0),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
                   child: TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                    child: Text(
+                      'Listar clientes',
+                      style: TextStyle(color: Colors.white),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => CadastroCli()),
-                      );
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (_) => ListarCli()),
+                          (Route<dynamic> route) => false);
                     },
-                    child: const Text(
-                      "Cadastrar cliente",
-                      style: TextStyle(fontSize: 30, color: Colors.white),
-                    ),
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(bottom: 20),
+                  margin: EdgeInsets.all(20.0),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
                   child: TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                    child: Text(
+                      'Editar cliente',
+                      style: TextStyle(color: Colors.white),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ListarCli()),
-                      );
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (_) => AtualizarCli()),
+                          (Route<dynamic> route) => false);
                     },
-                    child: const Text(
-                      "Listar cliente",
-                      style: TextStyle(fontSize: 30, color: Colors.white),
-                    ),
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(bottom: 20),
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => AtualizarCli()),
-                      );
-                    },
-                    child: const Text(
-                      "Editar cliente",
-                      style: TextStyle(fontSize: 30, color: Colors.white),
-                    ),
+                  margin: EdgeInsets.all(20.0),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(30.0),
                   ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(bottom: 20),
                   child: TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                    child: Text(
+                      'Deletar cliente',
+                      style: TextStyle(color: Colors.white),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => DeletarCli()),
-                      );
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (_) => DeletarCli()),
+                          (Route<dynamic> route) => false);
                     },
-                    child: const Text(
-                      "Deletar cliente",
-                      style: TextStyle(fontSize: 30, color: Colors.white),
-                    ),
                   ),
                 ),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );

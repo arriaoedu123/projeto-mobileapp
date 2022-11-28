@@ -46,7 +46,6 @@ class getTextFormField extends StatelessWidget {
             borderSide: BorderSide(color: Colors.blue),
           ),
           prefixIcon: Icon(icon),
-          hintText: hintName,
           labelText: hintName,
           fillColor: Colors.grey[200],
           filled: true,

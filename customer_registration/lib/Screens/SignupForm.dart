@@ -56,7 +56,7 @@ class _SignupFormState extends State<SignupForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cadastro de clientes'),
+        title: Text('Cadastre sua conta'),
       ),
       body: Form(
         key: _formKey,
@@ -67,7 +67,7 @@ class _SignupFormState extends State<SignupForm> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  genLoginSignupHeader('Cadastrar sua conta'),
+                  genLoginSignupHeader('Cadastro'),
                   getTextFormField(
                       controller: _conUserId,
                       icon: Icons.person,
